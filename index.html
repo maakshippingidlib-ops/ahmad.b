@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TurkDrive | تأجير السيارات في تركيا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo"><i class="material-symbols-outlined">directions_car</i>TurkDrive</a>
+    <nav class="nav">
+      <a href="index.html" class="active">الرئيسية</a>
+      <a href="#fleet">أسطول السيارات</a>
+      <a href="#why">من نحن</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+    <div class="actions">
+      <label class="language-picker"><span class="visually-hidden">اللغة</span><select class="language-select" aria-label="اللغة"><option value="ar">العربية</option><option value="tr">Türkçe</option><option value="en">English</option></select></label>
+      <div class="currency"><button data-cur="USD">USD</button><button data-cur="TRY" class="on">TRY</button></div>
+      <a href="#" class="avatar" aria-label="حسابي"><span class="material-symbols-outlined">person</span></a>
+      <button class="menu-btn" aria-label="القائمة"><span class="material-symbols-outlined">menu</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="container">
+    <span class="badge"><span class="material-symbols-outlined" style="font-size:16px">verified</span> الخدمة الأولى لتأجير السيارات الفاخرة في تركيا</span>
+    <h1>استأجر سيارتك المثالية في تركيا بكل سهولة وأمان</h1>
+    <p>نقدم لك أسطولاً متنوعاً من أحدث السيارات مع تأمين شامل، دعم فني على مدار الساعة، وتوصيل مجاني للمطارات الرئيسية.</p>
+  </div>
+  <div class="search">
+    <div class="container">
+      <div class="search-box">
+        <div class="field">
+          <label><span class="material-symbols-outlined">location_on</span>مكان الاستلام والتسليم</label>
+          <select><option>مطار إسطنبول (IST)</option><option>مطار صبيحة (SAW)</option><option>مطار أنطاليا (AYT)</option><option>مطار أنقرة (ESB)</option></select>
+        </div>
+        <div class="field">
+          <label><span class="material-symbols-outlined">calendar_month</span>تواريخ الإيجار</label>
+          <input type="text" value="١٢ أكتوبر - ١٩ أكتوبر" onfocus="this.type='text'">
+        </div>
+        <div class="field">
+          <label><span class="material-symbols-outlined">directions_car</span>فئة السيارة</label>
+          <select id="catSelect">
+            <option value="all">جميع الفئات (SUV, Sedan)</option>
+            <option value="luxury">فاخرة</option><option value="suv">عائلية SUV</option><option value="eco">اقتصادية</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="searchBtn"><span class="material-symbols-outlined">search</span>ابحث عن سيارة</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why us -->
+<section class="features" id="why">
+  <div class="container">
+    <div class="sec-head center"><span class="eyebrow">لماذا تختارنا؟</span><h2>معايير عالمية لتجربة قيادة استثنائية</h2></div>
+    <div class="grid-4">
+      <div class="feature"><div class="ico"><span class="material-symbols-outlined">shield</span></div><h3>تأمين شامل 100%</h3><p>تأمين ضد الحوادث والسرقة يضمن لك راحة البال طوال فترة رحلتك في كافة المدن التركية.</p></div>
+      <div class="feature"><div class="ico"><span class="material-symbols-outlined">support_agent</span></div><h3>خدمة عملاء 24/7</h3><p>دعم فني متواصل بلغتك العربية والإنجليزية والتركية لمساعدتك في أي وقت وأي مكان.</p></div>
+      <div class="feature"><div class="ico"><span class="material-symbols-outlined">payments</span></div><h3>بدون رسوم خفية</h3><p>شفافية كاملة في الأسعار، ما تشاهده في موقعنا هو ما تدفعه بالضبط دون أي تكاليف إضافية مفاجئة.</p></div>
+      <div class="feature"><div class="ico"><span class="material-symbols-outlined">flight_land</span></div><h3>استلام من المطار</h3><p>سنكون بانتظارك فور وصولك في كافة مطارات تركيا الرئيسية لتسليمك السيارة بسرعة وسهولة.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Fleet -->
+<section id="fleet">
+  <div class="container">
+    <div class="fleet-head">
+      <div><span class="eyebrow">أسطول السيارات</span><h2 style="font-size:24px">أبرز السيارات المتاحة للإيجار</h2></div>
+      <div class="tabs">
+        <button class="tab on" data-filter="all">الكل</button>
+        <button class="tab" data-filter="luxury">فاخرة</button>
+        <button class="tab" data-filter="suv">عائلية SUV</button>
+        <button class="tab" data-filter="eco">اقتصادية</button>
+      </div>
+    </div>
+
+    <div class="grid-4">
+      <!-- صور السيارات محفوظة محلياً في images/cars -->
+      <article class="car-card" data-cat="luxury">
+        <div class="car-img g4 car-photo photo-bmw" role="img" aria-label="صورة سيارة BMW Series 5"><span class="tag">فاخرة</span></div>
+        <div class="car-body">
+          <h3>BMW Series 5</h3>
+          <div class="specs"><span><span class="material-symbols-outlined">settings</span>أوتوماتيك</span><span><span class="material-symbols-outlined">local_gas_station</span>بنزين</span><span><span class="material-symbols-outlined">airline_seat_recline_normal</span>5 مقاعد</span></div>
+          <div class="car-foot"><div class="price"><small>/ يوم</small><strong data-try="3500">₺ 3,500</strong></div><a href="car.html?car=bmw" class="btn btn-primary">احجز الآن</a></div>
+        </div>
+      </article>
+      <article class="car-card" data-cat="luxury">
+        <div class="car-img g3 car-photo photo-mercedes" role="img" aria-label="صورة سيارة Mercedes C-Class"><span class="tag">رجال أعمال</span></div>
+        <div class="car-body">
+          <h3>Mercedes C-Class</h3>
+          <div class="specs"><span><span class="material-symbols-outlined">settings</span>أوتوماتيك</span><span><span class="material-symbols-outlined">local_gas_station</span>بنزين</span><span><span class="material-symbols-outlined">airline_seat_recline_normal</span>5 مقاعد</span></div>
+          <div class="car-foot"><div class="price"><small>/ يوم</small><strong data-try="2500">₺ 2,500</strong></div><a href="car.html?car=mercedes" class="btn btn-primary">احجز الآن</a></div>
+        </div>
+      </article>
+      <article class="car-card" data-cat="suv">
+        <div class="car-img g2 car-photo photo-hyundai" role="img" aria-label="صورة سيارة Hyundai Tucson"><span class="tag">عائلية SUV</span></div>
+        <div class="car-body">
+          <h3>Hyundai Tucson</h3>
+          <div class="specs"><span><span class="material-symbols-outlined">settings</span>أوتوماتيك</span><span><span class="material-symbols-outlined">local_gas_station</span>ديزل</span><span><span class="material-symbols-outlined">airline_seat_recline_normal</span>5 مقاعد</span></div>
+          <div class="car-foot"><div class="price"><small>/ يوم</small><strong data-try="2200">₺ 2,200</strong></div><a href="car.html?car=hyundai" class="btn btn-primary">احجز الآن</a></div>
+        </div>
+      </article>
+      <article class="car-card" data-cat="eco">
+        <div class="car-img g1 car-photo photo-renault" role="img" aria-label="صورة سيارة Renault Megane"><span class="tag">اقتصادية</span></div>
+        <div class="car-body">
+          <h3>Renault Megane</h3>
+          <div class="specs"><span><span class="material-symbols-outlined">settings</span>أوتوماتيك</span><span><span class="material-symbols-outlined">local_gas_station</span>ديزل</span><span><span class="material-symbols-outlined">airline_seat_recline_normal</span>5 مقاعد</span></div>
+          <div class="car-foot"><div class="price"><small>/ يوم</small><strong data-try="1400">₺ 1,400</strong></div><a href="car.html?car=renault" class="btn btn-primary">احجز الآن</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="container">
+    <div class="sec-head center"><span class="eyebrow">آراء العملاء</span><h2>تجربتهم معنا في تركيا</h2></div>
+    <div class="grid-3">
+      <div class="review"><div class="stars">★★★★★</div><p>"تجربة رائعة جداً! استلمت السيارة من مطار صبيحة في أفضل حالة، وكانت نظيفة تماماً وفي أفضل حالة. التعامل كان احترافي والموظف كان بانتظارنا في الوقت المحدد."</p><div class="who"><i>أ.ع</i><div><b>أحمد عبدالله</b><small>السعودية، الرياض</small></div></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"الأسعار واضحة تماماً بدون أي رسوم مخفية كما وعدونا. قمت باستئجار هيونداي توسان لرحلة عائلية إلى طرابزون وكانت السيارة ممتازة جداً في المرتفعات."</p><div class="who"><i>م.ر</i><div><b>محمد رجب</b><small>الإمارات، دبي</small></div></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"خدمة العملاء متواجدون على مدار الساعة، واجهت استفساراً بسيطاً وتم الرد خلال دقائق. أنصح بشدة بالتعامل مع TurkDrive لكل زائر لتركيا."</p><div class="who"><i>س.ك</i><div><b>سارة كمال</b><small>قطر، الدوحة</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-box">
+      <div><h2>جاهز لبدء رحلتك في تركيا؟</h2><p>احجز سيارتك الآن واحصل على خصم 15% على إجمالي حجزك الأول مع توصيل مجاني للمطار.</p></div>
+      <a href="#fleet" class="btn btn-light">تصفح الأسطول</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <a href="index.html" class="logo"><i class="material-symbols-outlined">directions_car</i>TurkDrive</a>
+    <span>© TurkDrive 2024. جميع الحقوق محفوظة.</span>
+    <nav><a href="#">سياسة الخصوصية</a><a href="#">الشروط والأحكام</a></nav>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

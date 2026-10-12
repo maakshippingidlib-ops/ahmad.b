@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>حجز سيارة | TurkDrive</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo"><i class="material-symbols-outlined">directions_car</i>TurkDrive</a>
+    <nav class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="index.html#fleet" class="active">أسطول السيارات</a>
+      <a href="index.html#why">من نحن</a>
+      <a href="index.html#contact">اتصل بنا</a>
+    </nav>
+    <div class="actions">
+      <label class="language-picker"><span class="visually-hidden">اللغة</span><select class="language-select" aria-label="اللغة"><option value="ar">العربية</option><option value="tr">Türkçe</option><option value="en">English</option></select></label>
+      <div class="currency"><button data-cur="USD">USD</button><button data-cur="TRY" class="on">TRY</button></div>
+      <a href="#" class="avatar" aria-label="حسابي"><span class="material-symbols-outlined">person</span></a>
+      <button class="menu-btn" aria-label="القائمة"><span class="material-symbols-outlined">menu</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div>
+      <div class="crumb"><em>حجز مباشر</em><span>• إسطنبول، مطار إسطنبول (IST)</span></div>
+      <h1 id="carTitle">مرسيدس-بنز C200 الفاخرة</h1>
+      <p>أكمل بياناتك لحجز سيارة الأحلام بكل سهولة وبدون دفع مسبق.</p>
+    </div>
+    <div class="guarantee">
+      <span class="material-symbols-outlined">verified_user</span>
+      <div><small>ضمان أفضل سعر</small><b>بدون رسوم إلغاء</b></div>
+    </div>
+  </div>
+</div>
+
+<main class="container booking">
+
+  <!-- Right column -->
+  <div>
+    <div class="panel gallery">
+      <div class="main-view g3">
+        <span class="avail">متاح فوراً للاستلام</span>
+      </div>
+      <!-- استبدل data-img بروابط صور حقيقية -->
+      <div class="thumbs">
+        <button class="thumb g1 on" data-hue="0" aria-label="صورة 1"></button>
+        <button class="thumb g2" data-hue="20" aria-label="صورة 2"></button>
+        <button class="thumb g3" data-hue="-20" aria-label="صورة 3"></button>
+        <button class="thumb g4" data-hue="40" aria-label="صورة 4"></button>
+      </div>
+    </div>
+
+    <div class="panel spec-panel">
+      <h3>مواصفات السيارة</h3>
+      <div class="spec-grid">
+        <div class="spec-item"><span class="material-symbols-outlined">airline_seat_recline_normal</span><small>المقاعد</small><br><b>مقاعد جلدية فاخرة</b></div>
+        <div class="spec-item"><span class="material-symbols-outlined">ac_unit</span><small>التكييف</small><br><b>مكيف هواء رقمي</b></div>
+        <div class="spec-item"><span class="material-symbols-outlined">explore</span><small>الملاحة</small><br><b>نظام GPS متطور</b></div>
+        <div class="spec-item"><span class="material-symbols-outlined">videocam</span><small>الرؤية</small><br><b>كاميرا خلفية °360</b></div>
+      </div>
+    </div>
+
+    <div class="help">
+      <div class="help-info">
+        <div class="ico"><span class="material-symbols-outlined">headset_mic</span></div>
+        <div><h4>بحاجة للمساعدة في الحجز؟</h4><p>فريق خدمة العملاء جاهز للإجابة على استفساراتكم عبر الواتساب على مدار الساعة.</p></div>
+      </div>
+      <a href="https://wa.me/905550000000" class="btn btn-whatsapp"><span class="material-symbols-outlined">chat</span>تواصل عبر واتساب</a>
+    </div>
+  </div>
+
+  <!-- Left column: form -->
+  <aside class="panel form-panel">
+    <h3>معلومات المستأجر</h3>
+    <form id="bookingForm" novalidate>
+      <div class="form-group"><label>الاسم الكامل (حسب الرخصة)</label><input type="text" placeholder="مثال: أحمد محمد أحمد" required></div>
+      <div class="form-group"><label>البريد الإلكتروني</label><input type="email" class="ltr" placeholder="name@example.com" required></div>
+      <div class="form-group"><label>رقم الهاتف</label><input type="tel" class="ltr" placeholder="+90 555 000 0000" required></div>
+      <div class="form-group"><label>رقم رخصة القيادة / جواز السفر</label><input type="text" placeholder="رقم الهوية أو الوثيقة الرسمية" required></div>
+      <div class="form-group"><label>ملاحظات إضافية (اختياري)</label><textarea placeholder="مثال: طلب مقعد أطفال، سائق إضافي، أو وقت استلام محدد..."></textarea></div>
+
+      <div class="summary">
+        <div class="row"><span>سعر اليوم (مرسيدس C200)</span><b id="dayPrice" data-try="2500">₺ 2,500</b></div>
+        <div class="row"><span>عدد الأيام</span>
+          <div class="stepper"><button type="button" id="minus">-</button><span id="days">3</span><button type="button" id="plus">+</button></div>
+        </div>
+        <div class="row"><span>رسوم التأمين الشامل</span><b class="free">مجاناً</b></div>
+        <div class="row"><span>ضريبة القيمة المضافة (%20)</span><b id="vat">₺ 1,500</b></div>
+        <div class="total"><span>الإجمالي الكلي</span><strong id="total">₺ 9,000</strong></div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">تأكيد الحجز والدفع لاحقاً عند الاستلام <span class="material-symbols-outlined">check_circle</span></button>
+      <div class="secure"><span class="material-symbols-outlined" style="font-size:16px">lock</span>حجز آمن 100% - لا يتطلب بطاقة ائتمانية لإتمام الحجز</div>
+    </form>
+  </aside>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <a href="index.html" class="logo"><i class="material-symbols-outlined">directions_car</i>TurkDrive</a>
+    <span>© TurkDrive 2024. جميع الحقوق محفوظة.</span>
+    <nav><a href="#">سياسة الخصوصية</a><a href="#">الشروط والأحكام</a></nav>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
